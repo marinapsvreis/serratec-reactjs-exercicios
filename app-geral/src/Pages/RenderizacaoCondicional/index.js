@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {Body, Container, Header} from '../style'
 
 export const RenderizacaoCondicional = () => {
   const [isLogado, setIsLogado] = useState(false)
@@ -28,9 +29,13 @@ export const RenderizacaoCondicional = () => {
   }
 
   return (
-    <>
-      {validarLogInLogOff(isLogado)}
+    <Body>
+      <Container>
+        <Header>
+        {validarLogInLogOff(isLogado)}
       <button onClick={() => logar()}>{isLogado ? 'Log-off' : 'Login'}</button>
-    </>
+        </Header>
+      </Container>
+    </Body>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { IndiretaFilho } from './IndiretaFilho'
+import { IndiretaFilho } from '../../Components/IndiretaFilho'
+import {Body, Container, Header} from '../style'
 
 export const IndiretaPai = () => {
   const [pai, setPai] = useState({
@@ -17,13 +18,17 @@ export const IndiretaPai = () => {
   }
 
   return (
-    <>
+    <Body>
+      <Container>
+      <Header>
       <div>
         <h3>{pai.nome}</h3>
         <h3>{pai.idade}</h3>
         <h3>{pai.nerd ? 'Verdadeiro' : 'Falso'}</h3>
       </div>
       <IndiretaFilho funcaoInformacao={informacaoDoPai}></IndiretaFilho>
-    </>
+      </Header>
+      </Container>
+    </Body>
   )
 }
