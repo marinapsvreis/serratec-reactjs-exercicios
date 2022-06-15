@@ -10,6 +10,7 @@ import { RenderizacaoCondicional } from '../Pages/RenderizacaoCondicional'
 import { Contador } from '../Pages/Contador'
 import { NotFound } from '../Pages/NotFound'
 import { UseParams } from '../Pages/UseParams'
+import { ApiPage } from '../Pages/ApiPage'
 
 export const Root = () => {
   return (
@@ -26,6 +27,9 @@ export const Root = () => {
         <Route path="/notfound" element={<NotFound />} />
         <Route path="/useparams" element={<UseParams/>}/>
         <Route path="/useparams/:idUseParams" element={<UseParams/>}/>
+        <Route path="/apipage" element={<ApiPage/>}/>
+        <Route path="/apipage/:idUseParams" element={<ApiPage/>}/>
+        
       </Routes>
     </BrowserRouter>
   )

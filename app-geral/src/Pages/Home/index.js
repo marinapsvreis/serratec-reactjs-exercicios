@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {Link} from 'react-router-dom'
+import { DataContext } from '../../Context/data'
 import {Body, Container, Header} from '../style'
 import {Lista, ItemLista} from './style'
 export const Home = () => {
   const [usuario, setUsuario] = useState({nome: "Marina", idade: 30})
+  const {name, handleSetName} = useContext(DataContext)
 
   return (
     <Body>
@@ -21,9 +23,12 @@ export const Home = () => {
         <Link to="/rendercondicional" style={{textDecoration: "none"}}><ItemLista>Renderizacao Condicional</ItemLista></Link><br/>
         <Link to={`/quemsomos/${usuario.nome}&${usuario.idade}`} style={{textDecoration: "none"}}><ItemLista>Quem somos (desafio)</ItemLista></Link><br/>      
         <Link to="/notfound" style={{textDecoration: "none"}}><ItemLista>NotFound</ItemLista></Link><br/>              
-        <Link to="/useparams" style={{textDecoration: "none"}}><ItemLista>UseParams e UseNavigate</ItemLista></Link><br/>              
+        <Link to="/useparams" style={{textDecoration: "none"}}><ItemLista>UseParams e UseNavigate</ItemLista></Link><br/>
+        <Link to="/apipage" style={{textDecoration: "none"}}><ItemLista>API Page</ItemLista></Link><br/>              
       </Lista> 
-      </Container>           
+      </Container>
+      <input type="text" placeholder="Digite seu nome" value={name} onChange={handleSetName}/>
+      <p>Made by {name}</p>                
     </Body>
   )
 }

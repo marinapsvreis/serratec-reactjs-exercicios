@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Body = styled.body`
+export const Body = styled.div`
   font-size: 18px;
 
    width: 100vw;
